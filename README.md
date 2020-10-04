@@ -24,6 +24,12 @@ Requirements for the computer:
 
 ```
 wget https://raw.githubusercontent.com/SarahIsWeird/RSViewer/master/provider/provider.lua
+edit provider.lua
+```
+
+You now need to set the IP address/URL of your webserver. For example: ``local ADDRESS = "http://example.com"`` All you need to do now is run the provider.
+
+```
 provider.lua
 ```
 
