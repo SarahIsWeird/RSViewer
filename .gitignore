@@ -1,0 +1,16 @@
+node_modules/
+
+viewer/*.iml
+viewer/.gradle
+viewer/local.properties
+viewer/.idea/caches
+viewer/.idea/libraries
+viewer/.idea/modules.xml
+viewer/.idea/workspace.xml
+viewer/.idea/navEditor.xml
+viewer/.idea/assetWizardSettings.xml
+viewer/.DS_Store
+viewer/build
+viewer/captures
+viewer/.externalNativeBuild
+viewer/.cxx
