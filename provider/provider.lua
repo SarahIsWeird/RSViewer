@@ -71,15 +71,16 @@ function transmitData(tbl)
     io.write(internet.request(ADDRESS, "remaining chunk", {["content"] = tx_chunk}, "POST")())
 
     internet.request(ADDRESS, "new data end", {["update_done"] = true}, "POST")
+
+    return "Done."
 end
 
 while true do
     io.write("Transmitting data")
-    local success, err = pcall(transmitData(interface.getItems()))
+    local success, err = pcall(transmitData, interface.getItems())
 
-
-    if (not success) then
-        io.write("\nThere was an error. Waiting for OC to close current connections. (10s)\n")
+    if not success then
+        io.write("\nThere was an error.\n(" .. err .. ")\nWaiting for OC to close current connections. (10s)\n")
 
         os.sleep(10)
 
