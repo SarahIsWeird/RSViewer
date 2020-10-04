@@ -75,8 +75,18 @@ end
 
 while true do
     io.write("Transmitting data")
-    transmitData(interface.getItems())
-    io.write("\nDone.\n")
+    local success, err = pcall(transmitData(interface.getItems()))
 
-    os.sleep(60)
+
+    if (not success) then
+        io.write("\nThere was an error. Waiting for OC to close current connections. (10s)\n")
+
+        os.sleep(10)
+
+        io.write("Retrying transmission.\n")
+    else
+        io.write("\nDone.\n")
+    
+        os.sleep(60)
+    end
 end
